@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Name und Reisepassnummer eintragen und Uhrzeiten automatisch ergänzen.">
+  <title>EMS Zeiterfassungssystem</title>
+  <link rel="icon" href="https://tse1.mm.bing.net/th/id/OIP.ITa04uGEHcoOey1frvdfhAAAAA?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3">
+</head>
+<body>
+  <header><img class="brand-logo" src="https://tse1.mm.bing.net/th/id/OIP.ITa04uGEHcoOey1frvdfhAAAAA?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3" alt="EMS-Logo" width="56" height="56" referrerpolicy="no-referrer"><span class="brand">Emergency Medical Service</span></header>
+  <main>
+    <p class="eyebrow">An- und Abmeldung</p>
+    <h1>EMS Zeiterfassungssystem</h1>
+    <div class="workspace">
+      <section class="panel" aria-label="Deine Angaben">
+        <div class="field">
+          <label for="entry-format">Vorlage</label>
+          <select id="entry-format">
+            <option value="standard" selected>Standard</option>
+            <option value="department">Abteilungsarbeit</option>
+            <option value="training">In Ausbildung</option>
+            <option value="air">Luftrettung</option>
+          </select>
+        </div>
+        <div id="personal-fields">
+        <div class="field"><label for="person-name">Name</label><input id="person-name" type="text" autocomplete="off" placeholder="Vor- und Nachname"></div>
+        <div class="field"><label for="passport">Reisepassnummer</label><input id="passport" type="text" autocomplete="off" spellcheck="false" placeholder="Reisepassnummer eingeben"></div>
+        </div>
+        <div id="department-fields" hidden>
+          <div class="field"><label for="department">Abteilung</label><input id="department" type="text" autocomplete="off" placeholder="Abteilung eingeben"></div>
+        </div>
+        <div id="training-fields" hidden>
+          <div class="field"><label for="instructor">Ausbilder</label><input id="instructor" type="text" autocomplete="off" placeholder="Name des Ausbilders"></div>
+          <div class="field"><label for="trainee">Küken</label><input id="trainee" type="text" autocomplete="off" placeholder="Name des Kükens"></div>
+        </div>
+        <div id="air-fields" hidden>
+          <div class="field"><label for="pilot">Pilot</label><input id="pilot" type="text" autocomplete="off" placeholder="Name des Piloten"></div>
+          <div class="field"><label for="pilot-passport">Reisepassnummer Pilot</label><input id="pilot-passport" type="text" autocomplete="off" spellcheck="false" placeholder="Reisepassnummer des Piloten"></div>
+          <div class="field"><label for="copilot">Co-Pilot</label><input id="copilot" type="text" autocomplete="off" placeholder="Name des Co-Piloten"></div>
+          <div class="field"><label for="copilot-passport">Reisepassnummer Co-Pilot</label><input id="copilot-passport" type="text" autocomplete="off" spellcheck="false" placeholder="Reisepassnummer des Co-Piloten"></div>
+        </div>
+        <div class="field">
+          <label for="previous-entry">Alten Eintrag übernehmen (optional)</label>
+          <textarea id="previous-entry" rows="3" spellcheck="false" autocomplete="off" placeholder="Alten Text oder Uhrzeit einfügen, z. B. 14:30" aria-describedby="previous-help previous-status"></textarea>
+          <p id="previous-help" class="field-help">Übernimmt die Zeit aus „Eingetragen um:“. Du kannst auch nur die richtige Uhrzeit eingeben. Leeren stellt die automatische Zeit wieder her.</p>
+          <p id="previous-status" class="field-help" role="status" aria-live="polite"></p>
+        </div>
+        <label class="checkout" for="checkout"><input id="checkout" type="checkbox"><span><strong>Jetzt austragen</strong><small>Hält die aktuelle Uhrzeit als Austragungszeit fest.</small></span></label>
+      </section>
+      <section class="panel result" aria-label="Dein Text">
+        <textarea id="result" readonly aria-label="Fertiger Eintrag" wrap="off" spellcheck="false"></textarea>
+        <button id="copy" type="button">Text kopieren</button>
+        <p id="feedback" role="status" aria-live="polite"></p>
+      </section>
+    </div>
+    <p class="note">Die Eintragungszeit wird beim ersten Tippen oder beim Laden gespeicherter Angaben festgehalten. Es gilt die lokale Uhrzeit deines Geräts.<br>Name und Reisepassnummer für Standard und Abteilungsarbeit werden automatisch in diesem Browser gespeichert. Leere die Felder, um die gespeicherten Angaben zu entfernen. Weitere Angaben, Uhrzeiten und Austragungsstatus werden beim Neuladen zurückgesetzt. Beim Wechsel der Vorlage bleiben deine aktuellen Angaben und Zeiten erhalten.</p>
+    <p id="storage-status" class="note" role="status" hidden></p>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
