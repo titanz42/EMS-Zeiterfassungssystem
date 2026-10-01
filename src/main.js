@@ -59,7 +59,7 @@ const nameInput = document.getElementById('person-name');
         standard: `Name: ${nameInput.value}\nReisepassnummer: ${passportInput.value}\nEingetragen um: ${time}\n\nAusgetragen um: ${exitedAt}`,
         department: `Name: ${nameInput.value}\nReisepassnummer: ${passportInput.value}\nAbteilung: ${value('department')}\nEingetragen um: ${time}\n\nAusgetragen um: ${exitedAt}`,
         training: `### Ausbildung:\n\nAusbilder: ${value('instructor')}\nKüken: ${value('trainee')}\nEingetragen um: ${time}\n\nAusgetragen um: ${exitedAt}`,
-        air: `Luftrettung:\n\nPilot: ${value('pilot')}\n\nReisepassnummer Pilot: ${value('pilot-passport')}\n\nCo-Pilot: ${value('copilot')}\n\nReisepassnummer Co-Pilot: ${value('copilot-passport')}\n\nEingetragen um: ${time}\n\nAusgetragen um: ${exitedAt}`,
+        air: `Luftrettung:\nPilot: ${value('pilot')}\nReisepassnummer Pilot: ${value('pilot-passport')}\nCo-Pilot: ${value('copilot')}\nReisepassnummer Co-Pilot: ${value('copilot-passport')}\nEingetragen um: ${time}\n\nAusgetragen um: ${exitedAt}`,
       };
       const text = templates[formatSelect.value] || templates.standard;
       result.value = checkout.checked ? `~~${text}~~` : text;
