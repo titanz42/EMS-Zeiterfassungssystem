@@ -57,7 +57,7 @@ const nameInput = document.getElementById('person-name');
       const value = id => extraInputs[id].value;
       const templates = {
         standard: `Name: ${nameInput.value}\nReisepassnummer: ${passportInput.value}\nEingetragen um: ${time}\n\nAusgetragen um: ${exitedAt}`,
-        department: `Name: ${nameInput.value}\n\nReisepassnummer: ${passportInput.value}\n\nAbteilung: ${value('department')}\n\nEingetragen um: ${time}\n\nAusgetragen um: ${exitedAt}`,
+        department: `Name: ${nameInput.value}\nReisepassnummer: ${passportInput.value}\nAbteilung: ${value('department')}\nEingetragen um: ${time}\n\nAusgetragen um: ${exitedAt}`,
         training: `### Ausbildung:\n\nAusbilder: ${value('instructor')}\nKüken: ${value('trainee')}\nEingetragen um: ${time}\n\nAusgetragen um: ${exitedAt}`,
         air: `Luftrettung:\n\nPilot: ${value('pilot')}\n\nReisepassnummer Pilot: ${value('pilot-passport')}\n\nCo-Pilot: ${value('copilot')}\n\nReisepassnummer Co-Pilot: ${value('copilot-passport')}\n\nEingetragen um: ${time}\n\nAusgetragen um: ${exitedAt}`,
       };
